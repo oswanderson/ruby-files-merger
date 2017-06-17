@@ -1,10 +1,8 @@
 # FilesMerger
-***
 
 FilesMerger is a Gem that facilitates the merger of _*.csv*_ and _*.txt*_ files, providing a simple way for doing so.
 
 ## With this gem you can:
-***
 
 * Set a new delimiter for the merged file;
 * Set the complete path for each file or just the file names and an root diretory;
@@ -15,12 +13,10 @@ FilesMerger is a Gem that facilitates the merger of _*.csv*_ and _*.txt*_ files,
 * Ensure that all the files have the same number of columns.
 
 ## Compatibility
-***
 
 Until now, no problems with any version of Ruby.
 
 ## Installation
-***
 
 **Bundle**
 
@@ -39,7 +35,6 @@ Execute the following code:
 `gem install files_merger`
 
 ## Usage
-***
 
 The FilesMerger is very simple to use, see:
 
@@ -95,7 +90,6 @@ After set the parameters, call the build mehod, responsable for all the magic.
 `FilesMerger.build`
 
 ## Methods
-***
 
 These are the are the accepted methods, for now:
 
@@ -110,6 +104,7 @@ These are the are the accepted methods, for now:
 Ex:
 `FilesMerger.delimiter ","`
 
+***
 * **new_delimiter**
   * Set a new delimiter for the file after the merging;
   * If it's not used, the the delimiter will be the same used in the files.
@@ -122,6 +117,7 @@ Ex:
 Ex:
 `FilesMerger.new_delimiter ";"`
 
+***
 * **files_to_merge**
   * Set the files to be merged;
   * Receives the an array with the names of all the files to be merged and the root folder of the files;
@@ -142,10 +138,12 @@ files = ['C:/Windows/User/Desktop/teste1.csv', 'C:/Windows/User/Desktop/teste2.c
 FilesMerger.files_to_merge(origin: "", files: files)
 ```
 
+***
 * **final_file_name**
   * Set the name of the file resulted from the merging;
   * If not used, the default name will be _"MERGED_YYYYmmDDHHMM.csv"_ (or .txt);
 
+***
 * **set_sort**
   * Sorts the file lines;
   * The sorting will always be from up(smaller) to down(bigger);
@@ -158,6 +156,7 @@ FilesMerger.files_to_merge(origin: "", files: files)
 Ex:
 `FilesMerger.set_sort(option: true, column:"column_name")`
 
+***
 * **elim_duplicity**
   * Eliminates duplicated lines;
   * Parameters:
@@ -172,6 +171,7 @@ Ex:
 Ex:
 `FilesMerger.elim_duplicity(option: true, key: "columns_name", order: "fend")`
 
+***
 * **limit_of_columns**
   * Determinates if all files must respect a limit of columns;
   * Parameters:
@@ -180,6 +180,7 @@ Ex:
 Ex:
 `FilesMerger.limit_of_columns(true)`
 
+***
 * **file_extension**
   * Set the extension for the file resulted from the mergin;
   * Parameters:
