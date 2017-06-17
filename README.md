@@ -1,10 +1,11 @@
-#FilesMerger
+# FilesMerger
 ***
 
 FilesMerger is a Gem that facilitates the merger of _*.csv*_ and _*.txt*_ files, providing a simple way for doing so.
 
-##With this gem you can:
+## With this gem you can:
 ***
+
 * Set a new delimiter for the merged file;
 * Set the complete path for each file or just the file names and an root diretory;
 * Set a name for the final merged file;
@@ -13,14 +14,15 @@ FilesMerger is a Gem that facilitates the merger of _*.csv*_ and _*.txt*_ files,
   * Soon you'll be able to eliminate all duplicates.
 * Ensure that all the files have the same number of columns.
 
-##Compatibility
+## Compatibility
 ***
+
 Until now, no problems with any version of Ruby.
 
-##Installation
+## Installation
 ***
 
-**By Bundle**
+**Bundle**
 
 Add this line of code to your Gemfile application:
 
@@ -36,7 +38,7 @@ Execute the following code:
 
 `gem install files_merger`
 
-##Usage
+## Usage
 ***
 
 The FilesMerger is very simple to use, see:
@@ -58,7 +60,8 @@ If any parameters are passed, the default is
 
 If the chosen option was *true*, the file must follow the example below:
 
-`files = ['test1.csv', 'test2.csv']
+```
+files = ['test1.csv', 'test2.csv']
 
 delimiter 				";"
 new_delimiter			" " #tab
@@ -68,17 +71,22 @@ final_file_name		"/Desktop/FINAL_FILE"
 set_sort 				  option: true, column:"column_name"
 elim_duplicity    option: true, key: "column_name", order: "fend"
 limit_of_columns	true
-file_extension		:csv`
+file_extension		:csv
+```
 
 But, if you are going to use via code, follow the example:
 
-`FilesMerger.delimiter ";"
+```
+FilesMerger.delimiter ";"
 FilesMerger.new_delimiter "|"
 FilesMerger.files_to_merge    origin: "C:/Windows/User/Desktop/", files: files
-...`
+...
+```
 or
-`FilesMerger.delimiter(";")
-...`
+```
+FilesMerger.delimiter(";")
+...
+```
 
 It's Ruby syntax. You decide.
 
@@ -86,7 +94,8 @@ After set the parameters, call the build mehod, responsable for all the magic.
 
 `FilesMerger.build`
 
-##Methods
+## Methods
+***
 
 These are the are the accepted methods, for now:
 
@@ -111,7 +120,7 @@ Ex:
     * "|"
 
 Ex:
-  `FilesMerger.new_delimiter ";"`
+`FilesMerger.new_delimiter ";"`
 
 * **files_to_merge**
   * Set the files to be merged;
@@ -119,15 +128,19 @@ Ex:
   * If all are in the same folder, you can just pass a root path and an array with just the names and extension of the files.
 
 Ex:
-  `files = ['teste1.csv', 'teste2.csv']
+```
+files = ['teste1.csv', 'teste2.csv']
 
-  FilesMerger.files_to_merge(origin: Dir.home() << "/Desktop/", files: files)`
+FilesMerger.files_to_merge(origin: Dir.home() << "/Desktop/", files: files)
+```
 
-  or
+or
 
-  `files = ['C:/Windows/User/Desktop/teste1.csv', 'C:/Windows/User/Desktop/teste2.csv']
+```
+files = ['C:/Windows/User/Desktop/teste1.csv', 'C:/Windows/User/Desktop/teste2.csv']
 
-  FilesMerger.files_to_merge(origin: "", files: files)`
+FilesMerger.files_to_merge(origin: "", files: files)
+```
 
 * **final_file_name**
   * Set the name of the file resulted from the merging;
@@ -143,7 +156,7 @@ Ex:
     * _column_ - the column to be used as criterion for the sorting;
 
 Ex:
-  `FilesMerger.set_sort(option: true, column:"column_name")`
+`FilesMerger.set_sort(option: true, column:"column_name")`
 
 * **elim_duplicity**
   * Eliminates duplicated lines;
@@ -157,7 +170,7 @@ Ex:
         * *fstart* - from start.
 
 Ex:
-  `FilesMerger.elim_duplicity(option: true, key: "columns_name", order: "fend")`
+`FilesMerger.elim_duplicity(option: true, key: "columns_name", order: "fend")`
 
 * **limit_of_columns**
   * Determinates if all files must respect a limit of columns;
@@ -165,7 +178,7 @@ Ex:
     * Values: _true_ or _false_;
 
 Ex:
-  `FilesMerger.limit_of_columns(true)`
+`FilesMerger.limit_of_columns(true)`
 
 * **file_extension**
   * Set the extension for the file resulted from the mergin;
@@ -173,6 +186,6 @@ Ex:
     * Values: :csv or :txt.
 
 Ex:
-  `FilesMerger.file_extension(:csv)`
-  or
-  `FilesMerger.file_extension(:txt)`
+`FilesMerger.file_extension(:csv)`
+or
+`FilesMerger.file_extension(:txt)`
